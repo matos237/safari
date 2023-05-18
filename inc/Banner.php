@@ -9,16 +9,16 @@
         function get_heading($page){
             switch($page){
                 case 'index':
-                    return $this->heading = "Najlepšie web stránky";
+                    return $this->heading = "Vitajte na Safari";
                     break;
                 case 'kontakt':
-                    return $this->heading = "Kontaktujte nás";
+                    return $this->heading = "Náš kontakt";
                     break;
                 case 'portfolio':
-                    return $this->heading = "Naše portfólio";
+                    return $this->heading = "Naša galéria";
                     break;
-                case 'qna':
-                    return $this->heading = "Najčastejšie otázky";
+                case 'about':
+                    return $this->heading = "Informácie o nás";
                     break;
             } 
         }

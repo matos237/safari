@@ -3,7 +3,7 @@
         public $conn;
         function __construct(){
 
-            $this->conn = new PDO('mysql:host=localhost;dbname=web_svrcek;charset=utf8','root','');
+            $this->conn = new PDO('mysql:host=localhost;dbname=safari;charset=utf8','root','');
         }
     }
 
