@@ -7,26 +7,9 @@
         <div class="col-50">
           <h2>Často kladené otázky</h2>
           <section>
-            <div class="accordion">
-              <div class="question"><p>Som poistený v prípade úmrtia?</p></div>
-              <div class="answer"><p>Našim základným poistením je tzv. teória "Veľa Šťastia", v ktorej Vám my poprajeme šťastie a je Vašou úlohou sa postarať o to aby ste prežili.</p></div>
-            </div>
-            <div class="accordion">
-              <div class="question"><p>Čo robiť ak mi lev odkusol nohu?</p></div>
-              <div class="answer"><p>Základom je nepanikáriť, kričať, počkať kým lev skončí a odpratať zbytky. V sekcii Pravidlá ste sa mali oboznámiť o tom, že u nás sa smeti nerozhadzujú!</p></div>
-            </div>
-            <div class="accordion">
-              <div class="question"><p>Prečo väčšina Vašich zvierat vypadá ako premalované zvieratá zo Slovenskej farmy?</p></div>
-              <div class="answer"><p>Dobrá otázka! Niektoré veci by sme si ale mali v živote nechať pre seba, nemyslíš?</p></div>
-            </div>
-            <div class="accordion">
-              <div class="question"><p>Funguje táto firma na pranie špinavých peňazí?</p></div>
-              <div class="answer"><p>Určite nie!</p></div>
-            </div>
-            <div class="accordion">
-              <div class="question"><p>Prečo by ste zakladali Safari na Slovensku?</p></div>
-              <div class="answer"><p>Lebo Afrika je ďaleko.</p></div>
-            </div>
+            <?php
+              include("partials/qna.php");
+            ?>
           </section>
         </div>
         <div class="col-50">
