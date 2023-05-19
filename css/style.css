@@ -289,6 +289,10 @@
     width: 100%;
   }
 
+  .sec-gal{
+    display: block;
+  }
+
   /* KONTAKT */
 
   .form-container {

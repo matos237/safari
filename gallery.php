@@ -3,11 +3,11 @@
   ?>
 
     <main>
-        <div class="row-gallery"> 
-
+        <div class='row-gallery'>
             <div class="col-20" id="zmizni"></div>
             <?php
-                include("partials/Gallery.php");
+                require_once("inc/Gallery.php");
+                $Galeria->get_galeria();
             ?>
         </div>
     </main>
