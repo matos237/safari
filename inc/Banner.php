@@ -14,7 +14,7 @@
                 case 'kontakt':
                     return $this->heading = "Náš kontakt";
                     break;
-                case 'portfolio':
+                case 'gallery':
                     return $this->heading = "Naša galéria";
                     break;
                 case 'about':
