@@ -5,21 +5,21 @@
     $users = $User->get_users();
     $db =  new Database();
     $data = [
-        "user_email" => $_POST["user_email"],
-        "user_password" => md5($_POST["user_password"]),
+        "email" => $_POST["email"],
+        "password" => md5($_POST["password"]),
     ];
     $found = False;
-    $user_name = "";
+    $name = "";
     if(isset($_POST["log_user"])){
         foreach($users as $user){
-            if($data["user_password"]==$user->user_password){
+            if($data["password"]==$user->password){
                 $found = True;
-                $user_name = $user->user_name;
+                $name = $user->name;
             }
         }
         if($found==True){
             $_SESSION["valid"] = true;
-            $_SESSION["user_name"] = $user_name ;
+            $_SESSION["name"] = $name ;
             header("Location: ../../admin.php");
         }else{
             echo "Nesprávne heslo";

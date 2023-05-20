@@ -8,22 +8,22 @@
     if(isset($_POST["add_user"])){
    
         $data = [
-            "user_name" => $_POST["user_name"],
-            "user_email" => $_POST["user_email"],
-            "user_password" => md5($_POST["user_password"])
+            "name" => $_POST["name"],
+            "email" => $_POST["email"],
+            "password" => md5($_POST["password"])
         ];
     
-        if(empty($data["user_name"])|| empty($data["user_email"]) || empty($data["user_password"])){
+        if(empty($data["name"])|| empty($data["email"]) || empty($data["password"])){
             echo "Všetky polia musia byť vyplnené";
         }else{
             foreach($users as $user){
-                if($user->user_email==$data["user_email"]){
+                if($user->email==$data["email"]){
                     $found =  true;
                 }
             }
             if($found==false){
                 try{
-                    $query = "INSERT INTO users (user_name, user_email, user_password) VALUES (:user_name, :user_email,:user_password)";
+                    $query = "INSERT INTO users (name, email, password) VALUES (:name, :email,:password)";
                     $query_run = $db->conn->prepare($query);        
                     $query_run->execute($data);
                     header("Location: ../../thankyou.php");

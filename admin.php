@@ -1,7 +1,7 @@
 <?php
     require('inc/config.php');
     session_start();
-    if(!isset($_SESSION['user_name'])){
+    if(!isset($_SESSION['name'])){
         header("Location:no-permission.php");
     }
 ?>
@@ -17,23 +17,23 @@
 <body class="container">
     <section>
         <h1>Admin rozhranie</h1>
-        <p>Vítaj admin <?php echo($_SESSION['user_name']);?></p><br>
+        <p>Vítaj admin <?php echo($_SESSION['name']);?></p><br>
         <a href="inc/login/logout.php">Odhlásiť sa</a>
     </section>
     <section>
         <h2>Portfólio</h2>
-        <form action="inc/portfolio/insert.php" method="post">
+        <form action="inc/gallery/insert.php" method="post">
             <input type="text" name="name" id="name" placeholder="Názov portfólia">
             <input type="text" name="image" id="image" placeholder="Cesta k obrázku">
             <input type="submit" value="Pridať" name="add_portfolio">
         </form>
         <?php
-            $portfolio = $Portfolio->get_portfolio();
+            $Galeria = $Galeria->get_galeria();
             echo '<table class="admin-table">';
-                foreach($portfolio as $p){
+                foreach($galeria as $g){
                     echo '<tr>';
-                    echo '<td>'.$p->name;'</td>';
-                    echo '<td>'.'<img width="150" src = "'.$p->image.'">';
+                    echo '<td>'.$g->name;'</td>';
+                    echo '<td>'.'<img width="150" src = "'.$g->path.'">';
                     echo '<td><button class="edit">Editovať</button>';
                     echo '<td>
                             <form action="inc/portfolio//delete.php" method="post">
@@ -46,7 +46,7 @@
     </section>
     <section>
         <h2>Qna</h2>
-        <form action="inc/qna/insert.php" method="post">
+        <form action="inc/qna/insert_qna.php" method="post">
             <input type="text" name="question" placeholder="Názov otázky">
             <input type="text" name="answer"placeholder="Názov odpovede">
             <input type="submit" value="Pridať" name="add_qna">

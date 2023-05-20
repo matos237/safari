@@ -14,12 +14,12 @@
                 <h1>Prihlásenie</h1>
               </li>
               <li>
-                <label for="mail">E-mail:</label>  
-                <input type="mail" name="user_mail" placeholder="Vložte váš email">
+                <label for="email">E-mail:</label>  
+                <input type="email" name="email" placeholder="Vložte váš email">
               </li>
               <li>
                 <label for="password">Heslo:</label>
-                <input type="password" name="user_password" placeholder="Vložte vaše heslo">
+                <input type="password" name="password" placeholder="Vložte vaše heslo">
               </li>
               <li>
                 <label for="submit"> </label>
