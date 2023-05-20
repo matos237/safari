@@ -6,11 +6,9 @@
       <div class="row">
         <div class="col-50">
           <h2>Často kladené otázky</h2>
-          <section>
             <?php
               include("partials/qna.php");
             ?>
-          </section>
         </div>
         <div class="col-50">
           <section>

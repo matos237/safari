@@ -1,7 +1,9 @@
 <?php
- require('inc/Page.php');
- require('inc/Gallery.php');
- require('inc/Database.php');
- require("inc/Banner.php");
- $page_title = "Safari";
+ require_once("Database.php");
+ require_once("Page.php");
+ require_once("Banner.php");
+ require_once("Gallery.php");
+ require_once("Qna.php");
+ require_once("Contact.php");
+ require_once("User.php");
 ?>

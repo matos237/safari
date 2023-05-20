@@ -1,8 +1,7 @@
-<section class="banner">
-    <div class="container text-white">
+<section>
+    <div>
         <h1>
             <?php 
-            //echo page_name();
              $page = $Page ->get_file_name();
              echo $Banner->get_heading($page);
             ?>

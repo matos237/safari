@@ -31,7 +31,7 @@
     font-weight: bold;
     font-size: 48px;
     position: absolute;
-    top: 120px;
+    top: 60px;
     width: 100%;
     text-align: center;
   }
@@ -154,6 +154,14 @@
     background-color: white;
     padding: 20px;
   }
+  .col-form {
+    align-items: center;
+    flex: 20%;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+  }
 
   .col-75 {
     flex: 75%;
@@ -170,6 +178,12 @@
   .col-20{
     flex: 20%;
     max-width: 20%;
+    background-color: white;
+    padding: 0px;
+  }
+  .col-40{
+    flex: 40%;
+    max-width: 40%;
     background-color: white;
     padding: 0px;
   }

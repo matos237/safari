@@ -3,21 +3,20 @@
         public $heading;
 
         function __construct(){
-            
         }
         
         function get_heading($page){
             switch($page){
-                case 'index':
+                case "index":
                     return $this->heading = "Vitajte na Safari";
                     break;
-                case 'kontakt':
+                case "kontakt":
                     return $this->heading = "Náš kontakt";
                     break;
-                case 'gallery':
+                case "gallery":
                     return $this->heading = "Naša galéria";
                     break;
-                case 'about':
+                case "about":
                     return $this->heading = "Informácie o nás";
                     break;
             } 

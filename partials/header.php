@@ -30,7 +30,11 @@
       </div>
     </div>
     
-    <div class="header-text"> SAFARI PARK </div>
+    <div class="header-text"> 
+      <?php
+      include('partials/banner.php');
+      ?>
+    </div>
   </div>
   
   <nav class="navbar" id="nav">
