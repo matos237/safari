@@ -1,6 +1,5 @@
-
 <?php
- include("inc/config.php");
+ include("./inc/config.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +31,7 @@
     
     <div class="header-text"> 
       <?php
-      include("partials/banner.php");
+      include("./partials/banner.php");
       ?>
     </div>
   </div>
@@ -45,12 +44,20 @@
     <label for="checkbox_toggle" class="hamburger">&#9776;</label>
     
     <div class="menu">
-    
+      <?php
+
+        include("./partials/location.php");
+
+      ?>
     <li><a href="./index.php">Home</a></li>
     <li><a href="./about.php">O nás</a></li>
     <li><a href="./gallery.php">Galéria</a></li>
-    <li><a href="./kontakt.php">Kontakt</a></li>
-    <li><a href="./login.php">Prihlásenie</a></li>
+    <li><a href="./contact.php">Kontakt</a></li>
+    <li>
+      <?php
+        echo $Status->get_status();
+      ?>
+    </li>
     
     </div>
     </ul>

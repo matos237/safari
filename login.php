@@ -1,7 +1,7 @@
-  
-  <?php
-    include('partials/header.php');
-  ?>
+<?php
+    session_start();
+    include("partials/header.php");
+?>
   <main>
   
     <div class="row">
@@ -37,5 +37,5 @@
     </div>
   </main>
   <?php
-    include('partials/footer.php');
+    include("partials/footer.php");
   ?>

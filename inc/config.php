@@ -6,4 +6,6 @@
  require_once("Qna.php");
  require_once("Contact.php");
  require_once("User.php");
+ require_once("Location.php");
+ require_once("Status.php");
 ?>

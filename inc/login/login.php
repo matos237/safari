@@ -1,6 +1,6 @@
 <?php
-    require("../config.php");
     session_start();
+    require("../config.php");
     
     $users = $User->get_users();
     $db =  new Database();
@@ -18,7 +18,7 @@
             }
         }
         if($found==True){
-            $_SESSION["valid"] = true;
+            $_SESSION["valid"] = True;
             $_SESSION["name"] = $name ;
             header("Location: ../../admin.php");
         }else{

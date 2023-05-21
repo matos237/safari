@@ -31,7 +31,7 @@
                     echo $e->getMessage();
                 }
             }else{
-                echo "user existuje";
+                echo "Používateľ už existuje";
             }
         }
     }

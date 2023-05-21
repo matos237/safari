@@ -26,7 +26,7 @@
                     return $this->heading = "Registrácia";
                     break;
                 case "admin":
-                    return $this->heading = "Admin rozhranie";
+                    return $this->heading = "Vitaj ". $_SESSION["name"];
                     break;
             } 
         }

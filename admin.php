@@ -1,7 +1,6 @@
 <?php
-    require('inc/config.php');
     session_start();
-    if(!isset($_SESSION['name'])){
+    if(!isset($_SESSION["name"])){
         header("Location:no-permission.php");
     }
 ?>
@@ -21,10 +20,6 @@
 
     ?>
     <main>
-    <section>
-        <p>Vítaj admin <?php echo($_SESSION['name']);?></p><br>
-        <a href="inc/login/logout.php">Odhlásiť sa</a>
-    </section>
     <section>
         <h2>Galéria</h2>
         <form action="inc/gallery/insert_gallery.php" method="post">

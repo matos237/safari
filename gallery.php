@@ -1,5 +1,6 @@
 <?php
-    include('partials/header.php');
+    session_start();
+    include("partials/header.php");
   ?>
 
     <main>
@@ -11,5 +12,5 @@
         </div>
     </main>
 <?php
-    include('partials/footer.php');
+    include("partials/footer.php");
 ?>
