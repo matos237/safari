@@ -4,7 +4,7 @@
     if(isset($_POST["delete_qna"])){
         try{
             $id = $_POST["delete_qna"];
-            $sql = $sql = "DELETE FROM qna WHERE id =".$id;
+            $sql = $sql = "DELETE FROM qna WHERE id_qna =".$id;
             $db->conn->exec($sql);
         }catch(PDOException $e){
             echo "Nastala chyba!";

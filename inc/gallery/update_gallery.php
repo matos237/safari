@@ -1,25 +1,25 @@
 <?php
     require("../config.php");
-    $qna = $Qna->get_qna();
+    $galeria = $Galeria->get_galeria();
     $db =  new Database();
-    if(isset($_POST['update_qna'])){
+    if(isset($_POST["update_gallery"])){
         $data = [
             "id" => $_POST["form_id"],
-            "question" => $_POST["update_question"],
-            "answer" => $_POST["update_answer"],
+            "name" => $_POST["update_name"],
+            "path" => $_POST["update_path"],
         ];
-        foreach ($qna as $q){
-            if($q->id==$data["id"]){
-                if(empty($data["question"])){
-                    $data["question"] = $q->question;
+        foreach ($galeria as $g){
+            if($g->id==$data["id"]){
+                if(empty($data["name"])){
+                    $data["name"] = $g->name;
                 }
-                if(empty($data["answer"])){
-                    $data['answer'] = $q->answer;
+                if(empty($data["path"])){
+                    $data["path"] = $g->path;
                 }
             }
         }
         try{
-            $query =  "UPDATE qna SET question=:question, answer=:answer WHERE id_qna=:id";
+            $query =  "UPDATE gallery SET name=:name, path=:path WHERE id_gallery=:id";
             $query_run = $db->conn->prepare($query);
             $query_run->execute($data);
             if(isset($_SERVER['HTTP_REFFERER'])){

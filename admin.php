@@ -14,31 +14,46 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
-<body class="container">
+<body>
+    <?php
+
+        include("partials/header.php");
+
+    ?>
+    <main>
     <section>
-        <h1>Admin rozhranie</h1>
         <p>Vítaj admin <?php echo($_SESSION['name']);?></p><br>
         <a href="inc/login/logout.php">Odhlásiť sa</a>
     </section>
     <section>
-        <h2>Portfólio</h2>
-        <form action="inc/gallery/insert.php" method="post">
+        <h2>Galéria</h2>
+        <form action="inc/gallery/insert_gallery.php" method="post">
             <input type="text" name="name" id="name" placeholder="Názov portfólia">
             <input type="text" name="image" id="image" placeholder="Cesta k obrázku">
-            <input type="submit" value="Pridať" name="add_portfolio">
+            <input type="submit" value="Pridať" name="insert_gallery">
         </form>
         <?php
             $Galeria = $Galeria->get_galeria();
             echo '<table class="admin-table">';
-                foreach($galeria as $g){
+                foreach($Galeria as $g){
                     echo '<tr>';
                     echo '<td>'.$g->name;'</td>';
                     echo '<td>'.'<img width="150" src = "'.$g->path.'">';
                     echo '<td><button class="edit">Editovať</button>';
                     echo '<td>
-                            <form action="inc/portfolio//delete.php" method="post">
-                                <button type = "submit" name="delete_portfolio" value="'.$p->id.'"'.'>Vymazať</button>
+                            <form action="inc/gallery/delete_gallery.php" method="post">
+                                <button type = "submit" name="delete_gallery" value="'.$g->id_gallery.'"'.'>Vymazať</button>
                             </form>';
+                    echo '</tr>';
+                    echo '<tr>';
+                    echo '<td colspan="4">
+                            <form action="inc/gallery/update_gallery.php" method="post">
+                                <input type="hidden" name="form_id" value="'.$g->id_gallery.'"'.'>
+                                <input type ="text" name="update_name" placeholder="Názov obrázka"><br>
+                                <input type ="text" name="update_path" placeholder = "Cesta k obrázku"><br>
+                                <input type ="submit" name="update_gallery" value="Upraviť">
+                            </form>
+                        </td>'; 
                     echo '</tr>';
                 }
                 echo '</table>';
@@ -49,7 +64,7 @@
         <form action="inc/qna/insert_qna.php" method="post">
             <input type="text" name="question" placeholder="Názov otázky">
             <input type="text" name="answer"placeholder="Názov odpovede">
-            <input type="submit" value="Pridať" name="add_qna">
+            <input type="submit" value="Pridať" name="insert_qna">
         </form>
         <?php
             $qna = $Qna->get_qna();
@@ -60,17 +75,17 @@
                     echo '<td>'.$q->question;'</td>';
                     echo '<td>'.$q->answer;'</td>';
                     echo '<td>
-                            <form action="inc/qna/delete.php" method="post">
-                                <button type = "submit" name="delete_qna" value="'.$q->id.'"'.'>Vymazať</button>
+                            <form action="inc/qna/delete_qna.php" method="post">
+                                <button type = "submit" name="delete_qna" value="'.$q->id_qna.'"'.'>Vymazať</button>
                             </form>';
                     echo '</tr>';
                     echo '<tr>';
                     echo '<td colspan="4">
-                            <form action="inc/qna/update.php" method="post">
-                                <input type="hidden" name="form_id" value="'.$q->id.'"'.'>
-                                <input type ="text" name="update_question" placeholder="Text otázky"><br>
-                                <input type ="text" name="update_answer" placeholder = "Text odpovede"><br>
-                                <input type ="submit" name="update_qna" value="Zmeň text">
+                            <form action="inc/qna/update_qna.php" method="post">
+                                <input type="hidden" name="form_id" value="'.$q->id_qna.'"'.'>
+                                <input type ="text" name="update_question" placeholder="Otázka"><br>
+                                <input type ="text" name="update_answer" placeholder = "Odpoveď"><br>
+                                <input type ="submit" name="update_qna" value="Upraviť">
                             </form>
                         </td>'; 
                     echo '</tr>';
@@ -85,22 +100,26 @@
             echo '<table class="admin-table">';
                 foreach($contact as $c){
                     echo '<tr>';
-                    echo '<td>'.$c->contact_name;'</td>';
-                    echo '<td>'.$c->contact_email;'</td>';
-                    echo '<td>'.$c->contact_message;'</td>';
+                    echo '<td>'.$c->name;'</td>';
+                    echo '<td>'.$c->surname;'</td>';
+                    echo '<td>'.$c->mail;'</td>';
+                    echo '<td>'.$c->phone;'</td>';
+                    echo '<td>'.$c->message;'</td>';
                     echo '<td>
-                            <form action="inc/contact/edit.php" method="post">
-                                <button type = "submit" name="edit_contact" value="'.$c->id.'"'.'>Editovať</button>
-                            </form></td>';
-                    echo '<td>
-                            <form action="inc/contact/delete.php" method="post">
-                                <button type = "submit" name="delete_contact" value="'.$c->id.'"'.'>Vymazať</button>
+                            <form action="inc/contact/delete_contact.php" method="post">
+                                <button type = "submit" name="delete_contact" value="'.$c->id_contact.'"'.'>Vymazať</button>
                             </form></td>';
                     echo '</tr>';
                 }
                 echo '</table>';
         ?>
     </section>
-    
+    </main>
+
+    <?php
+
+        include("partials/footer.php");
+
+    ?>
 </body>
 </html>

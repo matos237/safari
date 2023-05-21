@@ -1,6 +1,6 @@
 
 <?php
- include('inc/config.php');
+ include("inc/config.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,7 +32,7 @@
     
     <div class="header-text"> 
       <?php
-      include('partials/banner.php');
+      include("partials/banner.php");
       ?>
     </div>
   </div>
@@ -50,6 +50,7 @@
     <li><a href="./about.php">O nás</a></li>
     <li><a href="./gallery.php">Galéria</a></li>
     <li><a href="./kontakt.php">Kontakt</a></li>
+    <li><a href="./login.php">Prihlásenie</a></li>
     
     </div>
     </ul>

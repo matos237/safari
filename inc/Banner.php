@@ -19,6 +19,15 @@
                 case "about":
                     return $this->heading = "Informácie o nás";
                     break;
+                case "login":
+                    return $this->heading = "Registrácia";
+                    break;
+                case "register":
+                    return $this->heading = "Registrácia";
+                    break;
+                case "admin":
+                    return $this->heading = "Admin rozhranie";
+                    break;
             } 
         }
 

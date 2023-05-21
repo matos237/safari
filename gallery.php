@@ -6,8 +6,7 @@
         <div class='row-gallery'>
             <div class="col-20" id="zmizni"></div>
             <?php
-                require_once("inc/Gallery.php");
-                $Galeria->get_galeria();
+                require_once("partials/galeria.php");
             ?>
         </div>
     </main>
