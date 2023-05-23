@@ -22,8 +22,8 @@
             $query =  "UPDATE gallery SET name=:name, path=:path WHERE id_gallery=:id";
             $query_run = $db->conn->prepare($query);
             $query_run->execute($data);
-            if(isset($_SERVER['HTTP_REFFERER'])){
-                header("Location: {$_SERVER['HTTP_REFFERER']}");
+            if(isset($_SERVER["HTTP_REFFERER"])){
+                header("Location: {$_SERVER["HTTP_REFFERER"]}");
             }else{
                 header("Location: ../../admin.php");
             }

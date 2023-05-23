@@ -138,6 +138,12 @@
 
   /* VYUZIVANE U VSETKEHO OKREM GALLERY */
 
+  .center{
+    text-align: center;
+    margin-top: 150px;
+    margin-bottom: 150px;
+  }
+
   .row {  
     display: flex;
     flex-wrap: wrap;
@@ -186,6 +192,13 @@
     max-width: 40%;
     background-color: white;
     padding: 0px;
+  }
+
+  .col-admin {
+    align-items: center;
+    flex: 50%;
+    background-color: white;
+    padding: 20px;
   }
 
   /* INDEX */
@@ -440,6 +453,19 @@
     width: 100%;
     text-align: center;
     margin-top: 20%;
+  }
+
+  .admin-table{
+    border:1px solid rgb(7, 6, 6);
+  }
+  .admin-table tr td{
+    padding:10px;
+  }
+  .admin-table tr:nth-child(even){
+    background-color: #f2f2f2;
+  }
+  .admin-table tr:hover {
+    background-color: #ddd;
   }
 
   /* SHARED VECI MEDZI STRÁNKAMI */
